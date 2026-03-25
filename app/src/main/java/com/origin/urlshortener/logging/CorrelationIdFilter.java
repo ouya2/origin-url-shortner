@@ -1,4 +1,4 @@
-package com.origin.urlshortner.logging;
+package com.origin.urlshortener.logging;
 
 import java.io.IOException;
 import java.util.UUID;

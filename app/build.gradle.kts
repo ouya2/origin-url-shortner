@@ -27,11 +27,7 @@ dependencies {
     implementation(libs.spring.boot.starter.actuator)
     implementation(libs.spring.boot.starter.validation)
 
-    implementation(libs.spring.boot.starter.data.jpa)
-
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
-
-    runtimeOnly(libs.h2)
 
     // Use the Spring Boot Starter Test for testing Spring Boot applications with libraries including JUnit Jupiter, Hamcrest and Mockito.
     testImplementation(libs.spring.boot.starter.test)

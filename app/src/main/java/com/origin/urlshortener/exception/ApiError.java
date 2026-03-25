@@ -1,4 +1,4 @@
-package com.origin.urlshortner.exception;
+package com.origin.urlshortener.exception;
 
 import java.time.Instant;
 import java.util.List;

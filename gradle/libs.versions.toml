@@ -12,7 +12,6 @@ testcontainers = "1.20.4"
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
 spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
 spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation"}
-spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
 
 spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security" }
 
@@ -20,8 +19,6 @@ spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-star
 
 testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
 testcontainers-junit-jupiter = { module = "org.testcontainers:junit-jupiter" }
-
-h2 = { module = "com.h2database:h2"}
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
