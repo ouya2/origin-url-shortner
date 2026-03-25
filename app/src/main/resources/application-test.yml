@@ -1,0 +1,15 @@
+spring:
+  main:
+    banner-mode: "off"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+      ssl-enabled: false
