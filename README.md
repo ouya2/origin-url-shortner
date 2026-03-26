@@ -113,7 +113,7 @@ Invalid URL
 ```
 Controller → Service → Repository
 ```
-* Controler: HTTP handling only
+* Controller: HTTP handling only
 * Service: business logic
 * Repository: data storage abstraction
 
@@ -124,16 +124,16 @@ Controller → Service → Repository
 * collision-safe with retry (10 times)
 
 4. Idempotency
-* Same orignal URL returns the sdame short code
+* Same orignal URL returns the same short code
 * Achieved via reverse lookup map
 
 5. Error handling
-* Centralised using RestControllerAdvice
+* Centralised using @RestControllerAdvice
 * Consistent error structure
-* Proper HTTP status mapping (400 /404)
+* Proper HTTP status mapping (400/404)
 
 6. Routing design
-Redirect endpoint:
+* Redirect endpoint:
 ```
 GET /r/{code}
 ```
