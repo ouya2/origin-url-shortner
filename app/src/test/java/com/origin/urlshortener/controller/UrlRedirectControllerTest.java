@@ -40,7 +40,7 @@ public class UrlRedirectControllerTest {
         given(urlShortenerService.getUrlInfo("Ab12Xy"))
                 .willReturn(mapping);
 
-        mockMvc.perform(get("/Ab12Xy"))
+        mockMvc.perform(get("/r/Ab12Xy"))
                 .andExpect(status().isFound())
                 .andExpect(header().string("Location", "https://example.com/page"));
 
@@ -51,15 +51,21 @@ public class UrlRedirectControllerTest {
     @Test
     @DisplayName("GET /{code} returns 404 when short code does not exist")
     void redirect_missingCode_returnsNotFound() throws Exception {
-        given(urlShortenerService.getUrlInfo("missing1"))
-                .willThrow(new ShortCodeNotFoundException("missing1"));
+        given(urlShortenerService.getUrlInfo("34jsdf"))
+                .willThrow(new ShortCodeNotFoundException("34jsdf"));
 
-        mockMvc.perform(get("/missing1"))
+        mockMvc.perform(get("/r/34jsdf"))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.errorCode").value("SHORT_CODE_NOT_FOUND"))
-                .andExpect(jsonPath("$.message").value("Short code not found: missing1"));
+                .andExpect(jsonPath("$.message").value("Short code not found: 34jsdf"));
 
-        verify(urlShortenerService).getUrlInfo("missing1");
+        verify(urlShortenerService).getUrlInfo("34jsdf");
         verifyNoMoreInteractions(urlShortenerService);
     }
+
+    @Test
+    void redirect_invalidCodeFormat_returnsNotFound() throws Exception {
+        mockMvc.perform(get("/r/abc"))  // too short
+                .andExpect(status().isNotFound());
+     }
 }

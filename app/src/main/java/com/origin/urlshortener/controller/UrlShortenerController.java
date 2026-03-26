@@ -34,7 +34,7 @@ public class UrlShortenerController {
         
         ShortenUrlResponse response = new ShortenUrlResponse(
             mapping.code(),
-            "/" + mapping.code(),
+            "/r/" + mapping.code(),
             mapping.originalUrl()
         );
 

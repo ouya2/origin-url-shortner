@@ -21,7 +21,7 @@ public class UrlRedirectController {
         this.urlShortenerService = urlShortenerService;
     }
 
-    @GetMapping("/{code}")
+    @GetMapping("/r/{code:[a-zA-Z0-9]{6}}")
     public ResponseEntity<Void> getRedirect(@PathVariable String code) {
         UrlMapping mapping = urlShortenerService.getUrlInfo(code);
 

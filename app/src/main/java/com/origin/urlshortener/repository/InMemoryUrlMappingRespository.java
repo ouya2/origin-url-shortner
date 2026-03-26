@@ -22,7 +22,7 @@ public class InMemoryUrlMappingRespository implements UrlMappingRepository {
     @Override
     public Optional<UrlMapping> findByOriginalUrl(String originalUrl) {
         String code = codesByOriginalUrl.get(originalUrl);
-        if (code != null) {
+        if (code == null) {
             return Optional.empty();
         }
         return Optional.ofNullable(mappingsByCode.get(code));

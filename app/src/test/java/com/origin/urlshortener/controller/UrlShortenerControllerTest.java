@@ -58,7 +58,7 @@ public class UrlShortenerControllerTest {
             .andExpect(status().isOk())
             .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.code").value("Ab12Xy"))
-            .andExpect(jsonPath("$.shortUrl").value("/Ab12Xy"))
+            .andExpect(jsonPath("$.shortUrl").value("/r/Ab12Xy"))
             .andExpect(header().string(CORRELATION_ID_HEADER, not(is(emptyOrNullString()))));
 
         verify(urlShortenerService).shorten("https://example.com/page");
