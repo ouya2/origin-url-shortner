@@ -2,7 +2,6 @@ package com.origin.urlshortener.service;
 
 import java.net.URI;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.origin.urlshortener.exception.InvalidUrlException;
@@ -15,10 +14,8 @@ public class UrlShortenerService {
 
     private static final int MAX_SHORTEN_ATTEMPTS = 10;
     
-    @Autowired
     private final UrlMappingRepository repository;
 
-    @Autowired
     private final ShortCodeGenerator shortCodeGenerator;
 
     public UrlShortenerService(final UrlMappingRepository urlMappingRepository, final ShortCodeGenerator shortCodeGenerator) {
@@ -64,7 +61,7 @@ public class UrlShortenerService {
             throw new InvalidUrlException("URL cannot be null or blank");
         }
 
-         try {
+        try {
             URI uri = URI.create(url);
 
             String scheme = uri.getScheme();
